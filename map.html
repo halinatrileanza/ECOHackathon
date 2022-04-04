@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css"
+        type="text/css" />
+    <style>
+        .map {
+            height: 700px;
+        }
+
+        .legend {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #scaleNums {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .convert {
+            text-align: center;
+        }
+
+        #grad {
+            height: 100px;
+            background-color: red;
+            background-image: linear-gradient(to right,
+                    rgb(159, 85, 181) 0%,
+                    rgb(44, 106, 187) 8.75%,
+                    rgb(82, 139, 213) 12.5%,
+                    rgb(103, 163, 222) 18.75%,
+                    rgb(142, 202, 240) 25%,
+                    rgb(155, 213, 244) 31.25%,
+                    rgb(172, 225, 253) 37.5%,
+                    rgb(194, 234, 255) 43.75%,
+                    rgb(255, 255, 208) 50%,
+                    rgb(254, 248, 174) 56.25%,
+                    rgb(254, 232, 146) 62.5%,
+                    rgb(254, 226, 112) 68.75%,
+                    rgb(253, 212, 97) 75%,
+                    rgb(244, 168, 94) 82.5%,
+                    rgb(244, 129, 89) 87.5%,
+                    rgb(244, 104, 89) 93.75%,
+                    rgb(244, 76, 73) 100%);
+        }
+
+        body{text-align: center;}
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+</head>
+
+<body>
+    <div id="map" class="map"></div>
+
+    <script type="text/javascript">
+        var map = new ol.Map({
+            target: "map",
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM(),
+                }),
+            ],
+            view: new ol.View({
+                center: ol.proj.fromLonLat([-81.93, 41.46]),
+                zoom: 3,
+            }),
+        });
+        var layer_temp = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: "https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=b8e99c4ab296ae8ecafcfcf645802e7c",
+            }),
+        });
+        map.addLayer(layer_temp);
+    </script>
+    <div class="legend" id="legend">
+        <div>Temperature in °F</div>
+        <div id="scaleNums" class="scaleNums">
+            <div class="nums">-104</div>
+            <div class="nums">-68</div>
+            <div class="nums">32</div>
+            <div class="nums">68</div>
+            <div class="nums">104</div>
+        </div>
+    </div>
+    <div id="grad"></div>
+    <h5 class="convert">Numbers converted by us :) </h5>
+    <h5 class="convert">OG Boss Lady © 2022</h5>
+    <a href="index.html">Return Home</a>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <style>
+    
+      .checklist {
+        text-align: justify;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        border: solid white;
+      }
+      .child {
+   
+    border: solid black;
+}
+      input[type="checkbox"] + label {
+        display: block;
+        margin: 0.2em;
+        cursor: pointer;
+        padding: 0.2em;
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      input[type="checkbox"] + label:before {
+        content: "\2714";
+        border: 0.1em solid white;
+        border-radius: 0.2em;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        padding-left: 0.2em;
+        padding-bottom: 0.3em;
+        margin-right: 0.2em;
+        vertical-align: bottom;
+        color: transparent;
+        transition: 0.2s;
+      }
+
+      input[type="checkbox"] + label:active:before {
+        transform: scale(0);
+      }
+
+      input[type="checkbox"]:checked + label:before {
+        background-color: #00ddeb;
+        border-color: #00ddeb;
+        color: #fff;
+      }
+
+      input[type="checkbox"]:disabled + label:before {
+        transform: scale(1);
+        border-color: #aaa;
+      }
+
+      input[type="checkbox"]:checked:disabled + label:before {
+        transform: scale(1);
+        background-color: #a5f5fa;
+        border-color: #a5f5fa;
+      }
+      #div1{
+        position: absolute;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How to Help!</h1>
+    <p>
+      Keeping account of your carbon footprint is important, it allows the
+      individual to understand the impact their behavior is affecting the world.
+      Just remember change starts with you.
+    </p>
+    <div class="checklist">
+      <form>
+        <div class="child" id="div1">
+          <input type="checkbox" id="list1" name="list1" value="" />
+          <label for="list1">Plant based products 1x a week</label>
+          <input type="checkbox" id="list2" name="list2" value="" />
+          <label for="list2">Limit water use / Reduce shower time</label>
+          <input type="checkbox" id="list3" name="list3" value="" />
+          <label for="list3">Switch to LED lightbulbs</label>
+          <input type="checkbox" id="list4" name="list4" value="" />
+          <label for="list4">Reuse bags (ex. shopping bags) </label>
+          <input type="checkbox" id="list5" name="list5" value="" />
+          <label for="list5">Cut down on food waste / Compost</label>
+          <input type="checkbox" id="list6" name="list6" value="" />
+          <label for="list6"> Avoid palm oil products</label>
+          <input type="checkbox" id="list7" name="list7" value="" />
+          <label for="list7">Drink tap water with reusable waterbottle</label>
+          <input type="checkbox" id="list8" name="list8" value="" />
+          <label for="list8">Wash clothes with cold water</label>
+          <input type="checkbox" id="list9" name="list9" value="" />
+          <label for="list9">Buy recycled products</label>
+          <input type="checkbox" id="list10" name="list10" value="" />
+          <label for="list10">Plant trees 🌳</label>
+        </div>
+        <div class="child" id="div2">
+          <input type="checkbox" id="list11" name="list11" value="" />
+          <label for="list11">Go to thrift stores</label>
+          <input type="checkbox" id="list12" name="list12" value="" />
+          <label for="list12">Turn lights off when you leave a room</label>
+          <input type="checkbox" id="list13" name="list13" value="" />
+          <label for="list13">Avoid single-use products</label>
+          <input type="checkbox" id="list14" name="list14" value="" />
+          <label for="list14">Support local businesses</label>
+          <input type="checkbox" id="list15" name="list15" value="" />
+          <label for="list15">Buy products with less packaging</label>
+          <input type="checkbox" id="list16" name="list16" value="" />
+          <label for="list16">Use a push lawn mower</label>
+          <input type="checkbox" id="list17" name="list17" value="" />
+          <label for="list17">Seal windows and doorways</label>
+
+          <input type="checkbox" id="list18" name="list18" value="" />
+          <label for="list18">Buy an eco-friendly car or carpool</label>
+          <input type="checkbox" id="list19" name="list19" value="" />
+          <label for="list19">Go Solar 🌞</label>
+          <input type="checkbox" id="list20" name="list20" value="" />
+          <label for="list20">Educate your community</label>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

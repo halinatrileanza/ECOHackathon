@@ -1,0 +1,302 @@
+<html>
+    <head>
+        <style>
+          body{text-align: center;}
+h2 {
+    text-align: center;
+    font-size: 175%;
+}
+h1 {
+    text-align: center;
+    font-size: 300%;
+}
+label {
+    font-size: large;
+}
+
+button {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.submit {
+    display: flex;
+    justify-content: center;
+
+}
+.question { 
+              text-align: center;
+              
+        }
+.slidecontainer {
+    text-align: center;
+}
+          .range {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 50%;
+  margin: auto;
+  display: block;
+  margin-top: 35px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  border-radius:10px;
+  box-shadow:0px 0px 5px 5px gainsboro;
+  background: #4776e6; 
+  background: -webkit-linear-gradient(
+    to right,
+    #8e54e9,
+    #4776e6
+  ); 
+  background: linear-gradient(
+    to right,
+    #8e54e9,
+    #4776e6
+  ); 
+  height: 7.5px;
+}
+  
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2px solid;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  max-width: 80px;
+  position: relative;
+  bottom: 11px;
+  background-color: white;
+  cursor: -webkit-grab;
+
+  -webkit-transition: border 1000ms ease;
+  transition: border 1000ms ease;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -moz-appearance: none;
+  border: 2px solid;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  max-width: 80px;
+  position: relative;
+  bottom: 11px;
+  background-color: #1d1c25;
+  cursor: -moz-grab;
+  -moz-transition: border 1000ms ease;
+  transition: border 1000ms ease;
+}
+
+.range.blue::-webkit-slider-thumb {
+  border-color: rgb(59, 173, 227);
+}
+
+.results {
+    text-align: center;
+    font-size: 300%;
+    font-weight: bold;
+}
+          </style>
+    </head>
+    <body>
+    
+    </br>
+        <h1>Calculate your impact on the enviornment</h1>
+        <h2>10: Always </br> 0: Never</h2>
+    </br>
+        <div class="question">
+        <label>How often do you drive a personal vehicle?</label>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="5" id="num1" class="range blue" />
+            <p>Answer: <span id="ans1"></span></p>
+        </div>
+        </div>
+    </br>
+        <div class="question">
+          <label>How often do you recycle?</label>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="5" class="range blue" id="num2">
+            <p>Answer: <span id="ans2"></span></p>
+        </div>
+        </div>
+    </br>
+        <div class="question">
+        <label>How often do you waste excess food?</label>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="5" class="range blue" id="num3">
+            <p>Answer: <span id="ans3"></span></p>
+        </div>
+        </div>
+    </br>
+        <div class="question">
+        <label>How often electricity do you use?</label>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="5" class="range blue" id="num4">
+            <p>Answer: <span id="ans4"></span></p>
+        </div>
+        </div>
+    </br>
+        <div class="question">
+        <label>How often do you buy recycled products?</label>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="5" class="range blue" id="num5">
+            <p>Answer: <span id="ans5"></span></p>
+        </div>
+        </div>
+    </br>
+        <div class="question">
+        <label>How often do you thrift/substantially buy your clothes?</label>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="5" class="range blue" id="num6">
+            <p>Answer: <span id="ans6"></span></p>
+        </div>
+        </div>
+    </br>
+        <div class="question">
+        <label>How often do you turn off the lights when you leave a room?</label>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="5" class="range blue" id="num7">
+            <p>Answer: <span id="ans7"></span></p>
+        </div>
+    </div>
+</br>
+    <div class="question">
+        <label>How often do you use single-use products?</label>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="5" class="range blue" id="num8">
+            <p>Answer: <span id="ans8"></span></p>
+        </div>
+        </div>
+    </br>
+        <div class="question">
+        <label>How often do you eat plant based products?</label>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="5" class="range blue" id="num9">
+            <p>Answer: <span id="ans9"></span></p>
+        </div>
+        </div>
+    </br>
+        <div class="question">
+        <label>How often do you drink tap water?</label>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="5" class="range blue" id="num10">
+            <p>Answer: <span id="ans10"></span></p>
+        </div>
+        </div>
+    </br>
+
+    <div class="results">
+        <span id="results"> </span>
+    </div>
+</br>
+        <div class="submit">
+        <button type="button" id="submit" class="button">Submit</button>
+    </div>
+    <br>
+    <br>
+    <a href="index.html">Return Home</a>
+        <script>
+var slider1 = document.getElementById("num1");
+var output1 = document.getElementById("ans1");
+output1.innerHTML = slider1.value;
+slider1.oninput = function() {
+    output1.innerHTML = this.value;
+  }
+var slider2 = document.getElementById("num2");
+var output2 = document.getElementById("ans2");
+output2.innerHTML = slider2.value;
+slider2.oninput = function() {
+    output2.innerHTML = this.value;
+  }
+var slider3 = document.getElementById("num3");
+var output3 = document.getElementById("ans3");
+output3.innerHTML = slider3.value;
+slider3.oninput = function() {
+    output3.innerHTML = this.value;
+  }
+var slider4 = document.getElementById("num4");
+var output4 = document.getElementById("ans4");
+output4.innerHTML = slider4.value;
+slider4.oninput = function() {
+    output4.innerHTML = this.value;
+  }
+var slider5 = document.getElementById("num5");
+var output5 = document.getElementById("ans5");
+output5.innerHTML = slider5.value;
+slider5.oninput = function() {
+    output5.innerHTML = this.value;
+  }
+  var slider6 = document.getElementById("num6");
+var output6 = document.getElementById("ans6");
+output6.innerHTML = slider6.value;
+slider6.oninput = function() {
+    output6.innerHTML = this.value;
+  }
+  var slider7 = document.getElementById("num7");
+var output7 = document.getElementById("ans7");
+output7.innerHTML = slider7.value;
+slider7.oninput = function() {
+    output7.innerHTML = this.value;
+  }
+  var slider8 = document.getElementById("num8");
+var output8 = document.getElementById("ans8");
+output8.innerHTML = slider8.value;
+slider8.oninput = function() {
+    output8.innerHTML = this.value;
+  }
+  var slider9 = document.getElementById("num9");
+var output9 = document.getElementById("ans9");
+output9.innerHTML = slider9.value;
+slider9.oninput = function() {
+    output9.innerHTML = this.value;
+  }
+  var slider10 = document.getElementById("num10");
+var output10 = document.getElementById("ans10");
+output10.innerHTML = slider10.value;
+slider10.oninput = function() {
+    output10.innerHTML = this.value;
+  }
+
+</script>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+  $("#submit").on("click", function () { 
+      var n1 = parseInt($("#num1").val());
+      var n2 = parseInt($("#num2").val());
+      var n3 = parseInt($("#num3").val());
+      var n4 = parseInt($("#num4").val());
+      var n5 = parseInt($("#num5").val());
+      var n6 = parseInt($("#num6").val());
+      var n7 = parseInt($("#num7").val());
+      var n8 = parseInt($("#num8").val());
+      var n9 = parseInt($("#num9").val());
+      var n10 = parseInt($("#num10").val());
+      var total = 0;
+      total = (n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9 + n10) / 10;
+    $("#results").text("Your score is " + total);
+  });
+
+  
+        </script>
+    </body>
+</html>

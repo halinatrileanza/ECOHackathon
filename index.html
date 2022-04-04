@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+ #move{
+   position: relative;
+   left: -10px;
+ }
+   .checklist {
+        text-align: justify;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        border: solid white;
+      }
+      .child {
+   
+    border: solid black;
+}
+      input[type="checkbox"] + label {
+        display: block;
+        margin: 0.2em;
+        cursor: pointer;
+        padding: 0.2em;
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      input[type="checkbox"] + label:before {
+        content: "\2714";
+        border: 0.1em solid white;
+        border-radius: 0.2em;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        padding-left: 0.2em;
+        padding-bottom: 0.3em;
+        margin-right: 0.2em;
+        vertical-align: bottom;
+        color: transparent;
+        transition: 0.2s;
+      }
+
+      input[type="checkbox"] + label:active:before {
+        transform: scale(0);
+      }
+
+      input[type="checkbox"]:checked + label:before {
+        background-color: #00ddeb;
+        border-color: #00ddeb;
+        color: #fff;
+      }
+
+      input[type="checkbox"]:disabled + label:before {
+        transform: scale(1);
+        border-color: #aaa;
+      }
+
+      input[type="checkbox"]:checked:disabled + label:before {
+        transform: scale(1);
+        background-color: #a5f5fa;
+        border-color: #a5f5fa;
+      }
+      #div1{
+       position: relative;
+        left: -500px;
+      }
+      #div2{
+        position: relative;
+        top: -340px;
+        left: 120px;
+      }
+
+      #daTitle, #daTitle2{
+        position: relative;
+        right: 190px;
+      }
+ 
+  div{text-align: center;}
+    #back {
+  background-image: linear-gradient(aqua,rgba(255,0,0,0));
+}
+#blue{
+  max-width: 30%;
+  height: auto;
+}
+#speech{
+  position: absolute;
+  max-width: 20%;
+  height: auto;
+  right: 200px;
+  top: 30px;
+}
+#addDevice{
+  left: 10px;
+  top: 305px;
+  position: absolute;
+}
+ #speechButton{
+  right: 144px;
+  top: 350px;
+  position: absolute;
+ }
+
+ #dev1{
+   position: absolute;
+   right: 650px;
+   top: 150px;
+   
+   color: transparent;
+ }
+
+
+
+ button {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+button,
+button:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  button {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+h2,h4{
+  position: absolute;
+   right: 690px;
+  
+}
+   
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Work Sans', sans-serif;
+  margin-top: 0; }
+
+a {
+  color: #ff00cc;
+  transition: all .3s ease-in-out; }
+
+a:focus,
+button:focus {
+  outline: none; }
+
+.btn:hover,
+a:hover {
+  text-decoration: none;
+  color: #333399; }
+
+img {
+  max-width: 100%; }
+
+.bg-fixed {
+  background-size: cover; }
+
+.bg-grey {
+  background-color: #f7f8f9; }
+
+.fs-40 {
+  font-size: 40px; }
+
+section {
+  position: relative; }
+
+.section-content {
+  padding-top: 80px;
+  padding-bottom: 80px; }
+
+.title-wrap,
+.section-title {
+  text-align: center; }
+
+.shadow {
+  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.24), 0 2px 4px 0 rgba(67, 80, 98, 0.1) !important; }
+
+#header-navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 11;
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+
+.navbar-brand {
+  font-size: 40px;
+  color: #000; }
+
+.navbar-nav .nav-link {
+  color: #fff;
+  transition: .3s ease; }
+
+.navbar-nav:hover li a {
+  opacity: 0.5; }
+  .navbar-nav:hover li a:hover {
+    opacity: 1; }
+
+.navbar-toggler {
+  font-size: 2rem;
+  color: #fff; }
+
+.jumbotron {
+  color: #fff;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  border-radius: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+  min-height: 100vh; }
+  @media (max-width: 767px) and (orientation: landscape) {
+    .jumbotron {
+      min-height: 500px; } }
+  .jumbotron .container {
+    position: relative;
+    z-index: 1; }
+  .jumbotron:before {
+    position: absolute;
+    display: block;
+    content: "";
+    opacity: 0.8;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ff00cc;
+    background: -webkit-linear-gradient(to right, #333399, #ff00cc);
+
+    background: linear-gradient(to right, #333399, #ff00cc);
+ }
+  .jumbotron h1 {
+    line-height: .9;
+    font-weight: bold;
+    display: inline-block;
+    border: 15px solid #fff;
+    padding: 30px;
+    font-size: 9rem;
+    opacity: 0;
+    animation: 1s fadeInFromTop cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s forwards;
+    animation-delay: .8s; }
+
+.jumbotron-single h1 {
+  font-size: 3rem !important; }
+
+.overlay {
+  color: #fff; }
+  .overlay:before {
+    position: absolute;
+    display: block;
+    content: "";
+    opacity: 0.9;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ff00cc;
+    background: -webkit-linear-gradient(to right, #333399, #ff00cc);
+
+    background: linear-gradient(to right, #333399, #ff00cc);
+}
+  .overlay.bg-white {
+    color: #000; }
+    .overlay.bg-white:before {
+      background: #fff;
+      opacity: .7; }
+
+.text-white {
+  color: #fff; }
+
+.btn {
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 9px 25px;
+  text-transform: capitalize;
+  transition: all 0.3s ease 0s; }
+
+.btn-primary {
+  display: inline-block;
+  background-color: #ff00cc;
+  border-color: #ff00cc;
+  color: #fff; }
+  .btn-primary:hover {
+    background-color: #333399;
+    border-color: #333399;
+    color: #fff; }
+
+.btn-outline-primary {
+  color: #fff;
+  background-color: transparent;
+  background-image: none;
+  border-color: #fff; }
+  .btn-outline-primary:hover {
+    background-color: #333399;
+    border-color: #333399;
+    color: #fff; }
+
+.btn-shadow {
+  box-shadow: -5px 8px 20px 0px rgba(229, 16, 2, 0.15); }
+
+.btn-icon {
+  color: #000; }
+
+.btn-link {
+  color: #ff00cc; }
+
+.rectangle-1 {
+  width: 2000px;
+  height: 400px;
+  background: #8E2DE2;
+  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
+  background: linear-gradient(to right, #4A00E0, #8E2DE2);
+  transform-origin: 50% 150% 0;
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  transform: scale(1) rotate(-10deg); }
+
+.rectangle-2 {
+  width: 2000px;
+  height: 400px;
+  background: #8E2DE2;
+  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
+  background: linear-gradient(to right, #4A00E0, #8E2DE2);
+  transform-origin: 65% 100% 0;
+  position: absolute;
+  right: 0;
+  z-index: 0;
+  transform: scale(1) rotate(50deg); }
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-100vw) rotate(-15deg); }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(-15deg); } }
+
+@keyframes grow1 {
+  from {
+    opacity: 0;
+    transform: scale(2) rotate(-10deg); }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(-10deg); } }
+
+@keyframes grow2 {
+  from {
+    opacity: 0;
+    transform: scale(2) rotate(50deg); }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(50deg); } }
+
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.rectangle-1 {
+  opacity: 0;
+  animation: grow1 ease 1s forwards;
+  box-shadow: 0px 20px 30px 0px rgba(9, 21, 54, 0.25) !important; }
+
+.rectangle-2 {
+  opacity: 0;
+  animation: grow2 ease 1s forwards;
+  box-shadow: 0px 20px 30px 0px rgba(9, 21, 54, 0.25) !important; }
+
+.rectangle-transparent-1 {
+  width: 500px;
+  height: 500px;
+  border: 15px solid rgba(255, 255, 255, 0.08);
+  position: absolute;
+  left: -5%;
+  bottom: -10%;
+  display: block;
+  animation: floating-slow ease-in-out 12s infinite; }
+
+.rectangle-transparent-2 {
+  width: 600px;
+  height: 600px;
+  border: 15px solid rgba(255, 255, 255, 0.08);
+  position: absolute;
+  right: -10%;
+  top: 5%;
+  display: block;
+  animation: floating-slow ease-in-out 12s infinite; }
+
+.circle-1 {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+  left: 5%;
+  top: 50%;
+  animation: fadeInFromTop .5s linear forwards, floating ease 4s infinite; }
+
+.circle-2 {
+  width: 70px;
+  height: 70px;
+  top: 20%;
+  left: 83%;
+  border: 2px solid #fff;
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 4s infinite; }
+
+.circle-3 {
+  top: 80%;
+  right: 25%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 4s infinite; }
+
+@keyframes floating {
+  0% {
+    transform: translate(0%, 0%) rotate(25deg); }
+  25% {
+    transform: translate(5%, 15%) rotate(25deg); }
+  50% {
+    transform: translate(10%, 5%) rotate(25deg); }
+  75% {
+    transform: translate(0%, 15%) rotate(25deg); }
+  100% {
+    transform: translate(0%, 0%) rotate(25deg); } }
+
+@keyframes floating-slow {
+  0% {
+    transform: translate(0%, 0%) rotate(25deg); }
+  25% {
+    transform: translate(1%, 3%) rotate(25deg); }
+  50% {
+    transform: translate(2%, 1%) rotate(25deg); }
+  75% {
+    transform: translate(0%, 3%) rotate(25deg); }
+  100% {
+    transform: translate(0%, 0%) rotate(25deg); } }
+
+.triangle {
+  position: absolute; }
+
+.triangle-1 {
+  right: 0;
+  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 6s infinite; }
+  .triangle-1 img {
+    height: 50px;
+    width: 50px;
+    transform: rotate(30deg); }
+
+.triangle-2 {
+  top: 30%;
+  left: 20%;
+  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 8s infinite; }
+  .triangle-2 img {
+    width: 75px;
+    height: 75px;
+    transform: rotate(15deg); }
+
+.triangle-3 {
+  top: 80%;
+  left: 15%;
+  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 10s infinite; }
+  .triangle-3 img {
+    width: 45px;
+    height: 45px;
+    transform: rotate(40deg); }
+
+.triangle-4 {
+  top: 60%;
+  right: 15%;
+  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 5s infinite; }
+  .triangle-4 img {
+    width: 45px;
+    height: 45px;
+    transform: rotate(-40deg); }
+
+.feature-item {
+  transition: all .2s ease-in-out 0s !important; }
+  .feature-item:hover {
+    transform: translateY(-13px); }
+
+.progress-bar {
+  background-color: #ff00cc; }
+
+.testi-img img {
+  height: 60px;
+  width: 60px !important;
+  border-radius: 50%;
+  display: inline-block !important; }
+
+.testi-details {
+  text-align: left; }
+
+.testi-text {
+  font-weight: 300;
+  padding-top: 50px;
+  padding-bottom: 50px; }
+
+.testi-icon {
+  color: #ff00cc; }
+
+.testi-content {
+  margin-top: 80px;
+  padding-bottom: 80px; }
+
+.testi-item {
+  margin-left: 15px;
+  margin-right: 15px; }
+
+.owl-dot {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+  cursor: pointer; }
+  .owl-dot span {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 204, 0.3);
+    text-indent: -999em;
+    cursor: pointer;
+    position: absolute;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
+    -webkit-transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; }
+  .owl-dot.active > span {
+    background-color: transparent;
+    box-shadow: 0 0 0 2px #ff00cc; }
+
+.owl-dots {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  text-align: center;
+  left: 0;
+  right: 0;
+  clear: both;
+  padding: 0;
+  list-style: none;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.heading-section {
+  position: relative; }
+
+.filter-button-group {
+  margin-bottom: 15px; }
+  .filter-button-group a {
+    margin: 5px;
+    cursor: pointer; }
+
+.grid-link a {
+  margin: 5px;
+  font-size: 20px;
+  color: #000; }
+
+.grid-portfolio {
+  overflow: hidden; }
+
+.gutter-sizer {
+  width: 2%; }
+
+.grid-sizer,
+.grid-item {
+  width: 32%; }
+
+.grid-item {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden; }
+  .grid-item:hover .grid-info {
+    top: 50%;
+    opacity: 1; }
+
+.grid-item-wrapper:before {
+  content: '';
+  display: block;
+  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all .3s ease;
+  opacity: 0; }
+
+.grid-item-wrapper:hover:before {
+  opacity: 1; }
+
+.grid-info {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease; }
+
+.lightcase-icon-close:before {
+  content: '\e870';
+  font-family: "Linearicons-Free"; }
+
+.grid-title {
+  text-align: center; }
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1002;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  color: #fff; }
+
+.sidenav-content {
+  padding: 8px 32px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+
+.in .sidenav-content {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s, opacity 0.5s 0.5s; }
+
+.sidenav a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s; }
+
+.sidenav a:hover {
+  color: #f1f1f1; }
+
+.sidenav #side-nav-close,
+.sidenav #side-search-close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px; }
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px; }
+  .sidenav a {
+    font-size: 18px; } }
+
+#side-search .form-control {
+  background-color: transparent; }
+
+#side-search .input-group-text {
+  background: transparent;
+  color: #fff; }
+
+.skill-item {
+  width: 100%;
+  position: relative;
+  padding: 10px 0; }
+  .skill-item p {
+    font-size: 16px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 500; }
+  .skill-item .text-muted {
+    color: #939393; }
+
+.progress-bar, .progress {
+  transition: all 4s; }
+
+.blog-item {
+  transition: all 0.3s ease-in-out;
+  background-color: #f7f8f9;
+  border-radius: 3px;
+  overflow: hidden; }
+  .blog-item:hover {
+    box-shadow: 0 5px 15px -5px #333;
+    transform: translateY(-6px);
+    -webkit-transform: translateY(-6px);
+    -moz-transform: translateY(-6px);
+    transform: translateY(-6px);
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15); }
+
+.bg-grey .blog-item {
+  background-color: #fff; }
+
+.blog-item-wrapper {
+  margin-bottom: 30px; }
+
+.blog-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; }
+
+.blog-title h4 {
+  color: #000; }
+
+.blog-text {
+  padding: 15px; }
+
+.blog-tag {
+  color: #000;
+  letter-spacing: 1.1px;
+  text-transform: uppercase; }
+
+.blog-meta {
+  color: #939393; }
+  .blog-meta p {
+    display: inline-block;
+    font-size: 14px; }
+  .blog-meta a {
+    color: #939393; }
+
+.blog-author {
+  display: inline-block;
+  color: #939393; }
+  .blog-author p {
+    font-size: 14px;
+    margin-bottom: 0; }
+
+.blog-share-wrapper {
+  float: right;
+  display: inline-block;
+  margin: 0 -5px; }
+  .blog-share-wrapper .blog-share {
+    padding: 0 5px;
+    cursor: pointer; }
+
+.blog-content img.float-left {
+  margin: 15px 15px 15px 0; }
+
+.blog-content .img.float-right {
+  margin: 15px 0 15px 15px; }
+
+.form-control:focus {
+  border-color: #ff00cc;
+  box-shadow: 0 0 0 0.2rem rgba(253, 101, 90, 0.25); }
+
+.form-control::-webkit-input-placeholder {
+  opacity: .5; }
+
+.form-control::-moz-placeholder {
+  opacity: .5; }
+
+.form-control:-ms-input-placeholder {
+  opacity: .5; }
+
+.form-control::-ms-input-placeholder {
+  opacity: .5; }
+
+.form-control::placeholder {
+  opacity: .5; }
+
+.client-slider .owl-nav {
+  display: none; }
+
+.client-slider .client-item {
+  padding: 0 40px; }
+
+@media (max-width: 992px) {
+  .not-on-top #header-navbar {
+    position: fixed;
+    top: 0;
+    height: auto;
+    width: 100%;
+    background: #ff00cc;
+    background: -webkit-linear-gradient(to right, #333399, #ff00cc);
+    background: linear-gradient(to right, #333399, #ff00cc);
+    z-index: 11; }
+  #header-navbar {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important; }
+  .navbar-transparent .navbar-collapse {
+    background: #ff00cc;
+    background: -webkit-linear-gradient(to right, #333399, #ff00cc);
+    background: linear-gradient(to right, #333399, #ff00cc);
+    padding: 10px; } }
+
+@media (max-width: 767px) {
+  .jumbotron h1 {
+    font-size: 6rem; }
+  .grid-item {
+    width: 100%; }
+  .progress {
+    height: 30px;
+    font-size: 16px; } }
+
+    textarea{
+      text-align: center;
+    }
+
+    .cal {
+                display: flex;
+                justify-content: center;
+            }
+
+</style>
+<head>
+    <script src="https://www.puck-js.com/puck.js"></script>
+    <style src="Puck2.css"></style>
+  
+    <section>
+  
+      <div class="container">
+        <div class="texts">
+        </div>
+      </div>
+    </section>
+    <script>
+      const texts = document.querySelector(".texts");
+  
+      window.SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+  
+      const recognition = new SpeechRecognition();
+      recognition.interimResults = true;
+  
+      let p = document.createElement("p");
+  
+      recognition.addEventListener("result", (e) => {
+        texts.appendChild(p);
+        const text = Array.from(e.results)
+          .map((result) => result[0])
+          .map((result) => result.transcript)
+          .join("");
+  
+        p.innerText = text;
+        if (e.results[0].isFinal) {
+         
+          if(text.includes("view map")){
+            window.location.href = 'map.html';
+          }
+         
+          else if (text.includes("climate quiz")){
+            window.location.href = 'quiz.html';
+          }
+          
+          else if(text.includes("get temperature")){
+            var inner = document.getElementById("dev1").innerHTML;
+        var test = inner.replace(/<br>/g, "");
+        var test2 = test.replace(/° F/g, "");
+  
+        if (test2 >= 60.1) {
+          window.location.href = 'about.html';
+        }
+        else if(test2 <= 40.8){
+          window.location.href = 'ColdClimate.html';
+        }
+        else{
+          window.location.href = 'GoodClimate.html';
+        }
+          }
+          p = document.createElement("p");
+        }
+      });
+  
+  
+      function start(){
+      recognition.start();}
+      
+    </script>
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/lightcase/lightcase.css">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="#navbar" class="static-layout">
+
+	<nav id="header-navbar" class="navbar navbar-expand-lg py-4">
+        <div id="devices"></div>
+    <div id="main"></div>
+    <div class="container">
+        <div id="move">
+        <button id="addDevice">Bluetooth</button> </div>
+
+        <button onclick="start()" id="speechButton">Speech</button>
+        <a class="navbar-brand d-flex align-items-center text-white" href="/">
+          
+   
+            <h3 class="font-weight-bolder mb-0">ECO</h3>
+          
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav-header" aria-controls="navbar-nav-header" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="lnr lnr-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-nav-header">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="GoodClimate.html">Temperature</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="map.html">View Map</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="quiz.html">Climate Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a id="side-search-open" class="nav-link" href="#">
+                        <span class="lnr lnr-magnifier"></span>
+                    </a>
+                </li>
+                 <li class="nav-item only-desktop">
+                    <a class="nav-link" id="side-nav-open" href="#">
+                        <span class="lnr lnr-menu"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="side-nav" class="sidenav">
+	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
+	
+	<div class="sidenav-content">
+		<p>
+			Kuncen WB1, Wirobrajan 10010, DIY
+		</p>
+		<p>
+			<span class="fs-16 primary-color">(+68) 120034509</span>
+		</p>
+		<p>info@yourdomain.com</p>
+	</div>
+</div><div id="side-search" class="sidenav">
+	<a href="javascript:void(0)" id="side-search-close">&times;</a>
+	<div class="sidenav-content">
+		<form action="">
+
+			<div class="input-group md-form form-sm form-2 pl-0">
+			  <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+			  <div class="input-group-append">
+			    <button class="input-group-text red lighten-3" id="basic-text1">
+			    	<span class="lnr lnr-magnifier"></span>
+			    </button>
+			  </div>
+			</div>
+
+		</form>
+	</div>
+	
+</div>	<div class="jumbotron d-flex align-items-center">
+  <div class="container text-center">
+    <h1 class="display-1 mb-4" id="eco">ECO<br></h1>
+  </div>
+  <div class="rectangle-1"></div>
+  <div class="rectangle-2"></div>
+  <div class="rectangle-transparent-1"></div>
+  <div class="rectangle-transparent-2"></div>
+  <div class="circle-1"></div>
+  <div class="circle-2"></div>
+  <div class="circle-3"></div>
+  <div class="triangle triangle-1">
+  	<img src="img/obj_triangle.png" alt="">
+  </div>
+  <div class="triangle triangle-2">
+  	<img src="img/obj_triangle.png" alt="">
+  </div>
+  <div class="triangle triangle-3">
+  	<img src="img/obj_triangle.png" alt="">
+  </div>
+  <div class="triangle triangle-4">
+  	<img src="img/obj_triangle.png" alt="">
+  </div>
+</div>
+<section id="features" class="bg-white">
+    <div class="container">
+        <div class="section-content">
+            <div class="title-wrap mb-5" data-aos="fade-up">
+                <h2 class="section-title" id="move">
+                  Voice Commands:
+                </h2>
+               
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1 features-holder">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12 text-center mt-4">
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                                <div class="my-4">
+                                    <i class="lnr lnr-cog fs-40"></i>
+                                </div>
+                                
+                                <p>Get Temperature</p>
+                            </div>
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                                <div class="my-4">
+                                    <i class="lnr lnr-frame-contract fs-40"></i>
+                                </div>
+                               
+                               <a href="https://climate.nasa.gov/">Nasa's Global Climate Change Movement</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 text-center">
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                                <div class="my-4">
+                                    <i class="lnr lnr-bubble fs-40"></i>
+                                </div>
+                             
+                                <p>View Map</p>
+                            </div>
+                            <h1>Links</h1>
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                                <div class="my-4">
+                                    <i class="lnr lnr-magic-wand fs-40"></i>
+                                   
+                                </div>
+                               
+                                <a href="https://www.nationalgeographic.com/environment/article/global-warming-overview">National Geographic's Climate Views</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 text-center mt-4">
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                                <div class="my-4">
+                                    <i class="lnr lnr-clock fs-40"></i>
+                                </div>
+                                
+                                <p>Climate Quiz</p>
+                            </div>
+                         
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                             
+                                <div class="my-4">
+                                    <i class="lnr lnr-thumbs-up fs-40"></i>
+                                </div>
+                                
+                                <a href="https://www.iise.org/details.aspx?id=887">IISE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="section-featurettes" class="featurettes overlay bg-fixed" style="background-image: url(trees.jpeg);">
+
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row align-items-center text-white">
+
+                        <div class="col-md-4 offset-md-2 col-sm-6" data-aos="fade-right">
+                          
+                           
+                           
+                        </div>
+
+                        <div class="col-md-4 offset-md-right-2 col-sm-6" data-aos="flip-right">
+                          <h1 id="daTitle">How to Help!</h1>
+                          <p id="daTitle2">
+                            Keeping account of your carbon footprint is important, it allows the
+                            individual to understand the impact their behavior is affecting the world.
+                            Just remember change starts with you.
+                          </p>
+                          <br>
+                          <br>
+                        
+                            <form>
+                              <div class="child" id="div1">
+                                <input type="checkbox" id="list1" name="list1" value="" />
+                                <label for="list1">Plant based products 1x a week</label>
+                                <input type="checkbox" id="list2" name="list2" value="" />
+                                <label for="list2">Limit water use / Reduce shower time</label>
+                                <input type="checkbox" id="list3" name="list3" value="" />
+                                <label for="list3">Switch to LED lightbulbs</label>
+                                <input type="checkbox" id="list4" name="list4" value="" />
+                                <label for="list4">Reuse bags (ex. shopping bags) </label>
+                                <input type="checkbox" id="list5" name="list5" value="" />
+                                <label for="list5">Cut down on food waste / Compost</label>
+                                <input type="checkbox" id="list6" name="list6" value="" />
+                                <label for="list6"> Avoid palm oil products</label>
+                                <input type="checkbox" id="list7" name="list7" value="" />
+                                <label for="list7">Drink tap water with reusable waterbottle</label>
+                                <input type="checkbox" id="list8" name="list8" value="" />
+                                <label for="list8">Wash clothes with cold water</label>
+                                <input type="checkbox" id="list9" name="list9" value="" />
+                                <label for="list9">Buy recycled products</label>
+                                <input type="checkbox" id="list10" name="list10" value="" />
+                                <label for="list10">Plant trees 🌳</label>
+                              </div>
+                              <div class="child" id="div2">
+                                <input type="checkbox" id="list11" name="list11" value="" />
+                                <label for="list11">Go to thrift stores</label>
+                                <input type="checkbox" id="list12" name="list12" value="" />
+                                <label for="list12">Turn lights off when you leave a room</label>
+                                <input type="checkbox" id="list13" name="list13" value="" />
+                                <label for="list13">Avoid single-use products</label>
+                                <input type="checkbox" id="list14" name="list14" value="" />
+                                <label for="list14">Support local businesses</label>
+                                <input type="checkbox" id="list15" name="list15" value="" />
+                                <label for="list15">Buy products with less packaging</label>
+                                <input type="checkbox" id="list16" name="list16" value="" />
+                                <label for="list16">Use a push lawn mower</label>
+                                <input type="checkbox" id="list17" name="list17" value="" />
+                                <label for="list17">Seal windows and doorways</label>
+                      
+                                <input type="checkbox" id="list18" name="list18" value="" />
+                                <label for="list18">Buy an eco-friendly car or carpool</label>
+                                <input type="checkbox" id="list19" name="list19" value="" />
+                                <label for="list19">Go Solar 🌞</label>
+                                <input type="checkbox" id="list20" name="list20" value="" />
+                                <label for="list20">Educate your community</label>
+                              </div>
+                            </form>
+                         
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>	<section id="section-featurettes" class="featurettes">
+
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row align-items-center">
+
+                      <head>
+                      </head>
+                      <body>
+                        <div class="wrapper">
+                         
+                          <form action="#">
+                            <div class="row">
+                             
+                              <textarea id="textarea" disabled rows="10" cols="125"></textarea>
+                            </div>
+                            <div class="row">
+                              <div id="centerIt"></div>
+                              <label>Select Voice</label>
+                              <div class="outer">
+                                <select></select>
+                              </div>
+                            </div>
+                      
+                          </form>
+                        </div>        
+                        <button onclick="test()" id="button">Hear About Global Warming</button>
+              </div>
+                        <script src="script.js"></script>
+                        <br>
+                        <br>
+                        <br>
+                        <br> 
+
+                        <div class="col-md-4 offset-md-right-2 col-sm-6" data-aos="fade-left">
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section id="testimonial" class="section-padding bg-fixed bg-white overlay" style="background-image: url(img/bg-white.jpg);">
+    <div class="container">
+        <div class="section-content" data-aos="fade-up">
+            <div class="heading-section text-center">
+              <h2>What is Climate Change? And What Causes it?</h2>
+            </div>
+            <div class="row">
+                <div class="testi-content testi-carousel owl-carousel">
+                    <div class="testi-item text-center">
+                        <i class="testi-icon fa fa-3x fa-quote-left"></i>
+                        <br>
+                        <br>
+                        <h3>Climate change is a long term effect regarding the average weather patterns that define Earth's global, regional and local climates. These changes have been distinguished since the early 20th century and are predominantly driven by human activities such as:</h4>
+                        <div class="testi-meta-inner d-flex justify-content-center align-items-center">
+                            <div class="testi-img mr-2">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="testi-item text-center">
+                        <i class="testi-icon fa fa-3x fa-quote-left"></i>
+                        <br>
+                        <br>
+                        <p>Burning fossil fuel (coal, oil and gas): The act of burning fossil fuel was first started in the 1880s, where coal was used to generate electricity for homes and factories. Fossil fuels are burned in order to generate electricity, we use this in modern day to power transportation such as cars, planes and is used in industrial processes such as the manufacturing of food, beverages, petroleum, ceramics, base metals, coal, plastic and wood, etc.</p>
+                        <div class="testi-meta-inner d-flex justify-content-center align-items-center">
+                            <div class="testi-img mr-2">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="testi-item text-center">
+                        <i class="testi-icon fa fa-3x fa-quote-left"></i>
+                        <br>
+                        <br>
+                        <p>Cutting down forests: The start of deforestation is estimated to have taken place approximately 10,000 years ago, it is estimated 40-50% of the earth's original forest has vanished. Humans have been cutting trees down in order to use for building, furniture and paper usage. A lot of deforestation has taken place for the benefit of individuals. Trees are a benefit in the climate by absorbing CO2 from the atmosphere. When trees are cut down, the valuable effect is lost and the carbon stored into the trees is released into the atmosphere.</p>
+                        <div class="testi-meta-inner d-flex justify-content-center align-items-center">
+                            <div class="testi-img mr-2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-item text-center">
+                      <i class="testi-icon fa fa-4x fa-quote-left"></i>
+                      <br>
+                      <br>
+                      <p>Increasing livestock animals: In the 1920s, industrial scale farming began and chickens became the first factory farmed animal. Chickens were raised indoors in tremendous quantities for egg production and slaughter. In the 1960s, global livestock increased substantially, and beef production more than doubled. This is due to new technology, including larger tractors, the use of chemicals, and encouragement of government operations. The increase of livestock produces a large amount of methane when the animals digest their food. Methane is a hazardous air pollutant and a greenhouse gas. The exposure to this air causes 1 million premature deaths per year.</p>
+                      <div class="testi-meta-inner d-flex justify-content-center align-items-center">
+                          <div class="testi-img mr-2">
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="portfolio" class="bg-white">
+    <div class="container">
+        <div class="section-content">
+            <div class="title-wrap">
+                <h2 class="section-title">Participate In Our Daily Events!</h2>
+                <br>
+                <br>
+                <div class="cal">
+                  <iframe src="https://calendar.google.com/calendar/embed?height=700&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTitle=0&showPrint=0&src=aGdvNjRpdDg0MW1wZWVkdXZmdnYxcTB0c2tAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23616161" style="border:solid 1px #777" width="1200" height="700" frameborder="0" scrolling="no"></iframe>
+              </div>
+</section>
+<section id="client" class="overlay bg-fixed" style="background-image: url(img/bg.jpg);">
+    <div class="container">
+        <div class="section-content" data-aos="fade-up">
+            <div class="row ">
+                <div class="col-md-12">
+                    <div class="title-wrap mb-5">
+                        <h3>Check Out These Climate Savers!</h3>
+                    </div>
+                </div>
+                <div class="col-md-12 client-holder">
+                    <div class="client-slider owl-carousel">
+                        <div class="client-item">
+                            <img class="img-responsive" src="LOGO1.jpeg" alt=" ">
+                        </div>
+                        <div class="client-item">
+                            <img class="img-responsive" src="LOGO2.png" alt=" ">
+                        </div>
+                        <div class="client-item">
+                            <img class="img-responsive" src="LOGO3.png" alt=" ">
+                        </div>
+                        <div class="client-item">
+                            <img class="img-responsive" src="LOGO4.jpeg" alt=" ">
+                        </div>
+                        <div class="client-item">
+                            <img class="img-responsive" src="LOGO5.jpeg" alt=" ">
+                        </div>
+                        <div class="client-item">
+                            <img class="img-responsive" src="LOGO6.jpeg" alt=" ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<section id="reservation" class="bg-white section-content">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 offset-lg-1 mb-5 mb-lg-0" data-aos="fade-right">
+                <div class="bg-white p-5 shadow">
+                    <div class="heading-section text-center">
+                        <h2 class="mb-4">
+                            Contact Us
+                        </h2>
+                    </div>
+                    <form method="post" name="contact-us" action="">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Phone">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input type="text" class="form-control" id="websiteUrl" name="websiteUrl" placeholder="Home State">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Your Message ..."></textarea>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-primary btn-shadow btn-lg" type="submit" name="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1" data-aos="fade-left">
+                
+                <ul class="list-inline py-2">
+                    <li class="list-inline-item text-center">
+                        <span class="lnr fs-40 lnr-rocket"></span>
+                        <p>Become a Member!</p>
+                    </li>
+                    <li class="list-inline-item text-center">
+                        <span class="lnr fs-40 lnr-magic-wand"></span>
+                        <p>Join Us in the Fight!</p>
+                    </li>
+                    <li class="list-inline-item text-center">
+                        <span class="lnr fs-40 lnr-cog"></span>
+                        <p>Free Membership!</p>
+                    </li>
+                </ul>
+
+                <a href="#" class="btn btn-link p-0">
+                    <span>Make a Difference NOW!</span>
+                    <span class="lnr lnr-arrow-right"></span>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<section id="cta" class="bg-fixed overlay" style="background-image: url(img/bg.jpg);">
+    <div class="container">
+        <div class="section-content" data-aos="fade-up">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="mb-2">Our Presentation:</h2>
+                    <a class="btn btn-outline-primary btn-lg" href="https://docs.google.com/presentation/d/13CnzSZLGrJTJ0HUfNGt4v_gPyBMpZGbHYyQL2auZ88Y/edit?usp=sharing">Learn More!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<footer class="mastfoot my-3">
+    <div class="inner container">
+         <div class="row">
+         	<div class="col-lg-4 col-md-12 d-flex align-items-center">
+         		
+         	</div>
+         	<div class="col-lg-4 col-md-12 d-flex align-items-center">
+         		<p class="mx-auto text-center mb-0">&copy; 2022 Eco. Design by OG Boss Lady</p>
+         	</div>
+           
+            <div class="col-lg-4 col-md-12">
+            	<nav class="nav nav-mastfoot justify-content-center">
+	                <a class="nav-link" href="#">
+	                	<i class="fab fa-facebook-f"></i>
+	                </a>
+	                <a class="nav-link" href="#">
+	                	<i class="fab fa-twitter"></i>
+	                </a>
+	                <a class="nav-link" href="#">
+	                	<i class="fab fa-instagram"></i>
+	                </a>
+	                <a class="nav-link" href="#">
+	                	<i class="fab fa-linkedin"></i>
+	                </a>
+	                <a class="nav-link" href="#">
+	                	<i class="fab fa-youtube"></i>
+	                </a>
+	            </nav>
+            </div>
+            
+        </div>
+    </div>
+</footer>	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	<script src="vendor/bootstrap/popper.min.js"></script>
+	<script src="vendor/bootstrap/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js "></script>
+	<script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+	<script src="vendor/stellar/jquery.stellar.js" type="text/javascript" charset="utf-8"></script>
+	<script src="vendor/isotope/isotope.min.js"></script>
+	<script src="vendor/lightcase/lightcase.js"></script>
+	<script src="vendor/waypoints/waypoint.min.js"></script>
+	 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
+
+  
+        var _counter = 0;
+    
+        document.getElementById("addDevice").addEventListener('click', event => {
+            
+          Puck.connect(function (connection) {
+            if (connection === null) {
+              console.log("Connection failed!");
+              return;
+            }
+    
+            _counter++;
+            var conId = _counter;
+            var conName = "dev" + conId;
+            var div = document.createElement("div");
+            div.innerHTML =
+              `<div><p id="btn${conId}"></p>&nbsp;<span id="${conName}" style="font-family: monospace;"></span>`;
+            document.getElementById("devices").append(div);
+            connection.write("\x03\x10reset();\n", function () {
+              setTimeout(function () {
+                connection.write("\x10setInterval(()=>Bluetooth.println(E.getTemperature() * 1.8 + 32 + '° F'), 1000);NRF.on('disconnect',()=>reset());\n",
+                  function () {
+                    console.log(conName, "connected successfully");
+                  });
+              }, 500);
+            });
+            var line = "";
+            connection.on('data', function (d) {
+              line += d;
+              var lines = line.split("\n");
+              line = lines.pop();
+              lines.forEach(function (l) {
+                console.log(conName, "Got " + l);
+                document.getElementById(conName).innerText = l;
+                var ecoWork = document.getElementById("dev1").innerHTML;
+            document.getElementById("eco").innerHTML = ecoWork;
+              });
+            });
+          });
+        });
+      </script>
+	 
+	<script src="js/app.min.js "></script>
+	<script src="//localhost:35729/livereload.js"></script>
+</body>
+</html>
