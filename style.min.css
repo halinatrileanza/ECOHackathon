@@ -91,12 +91,13 @@ section {
 
 .jumbotron {
   color: #fff;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  position: relative;
+  position:relative;
   border-radius: 0;
   margin-bottom: 0;
   overflow: hidden;
@@ -620,11 +621,19 @@ section {
 /*============================
 =            BLOG            =
 ============================*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
 .blog-item {
   transition: all 0.3s ease-in-out;
   background-color: #f7f8f9;
   border-radius: 3px;
-  overflow: hidden; }
+  overflow: hidden; 
+  width:50%;
+  justify-content: center;
+}
   .blog-item:hover {
     box-shadow: 0 5px 15px -5px #333;
     transform: translateY(-6px);
